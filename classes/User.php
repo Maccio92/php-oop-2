@@ -1,4 +1,6 @@
 <?php
+
+require_once __DIR__ . "/Credit.php";
 class User
 {
     protected $name;
@@ -7,13 +9,13 @@ class User
     protected $address;
     protected $credit;
 
-    public function __construct($name, $surname, $mail, $address, $credit )
+    public function __construct($name, $surname, $mail, $address, $credit)
     {
         $this->name = $name;
         $this->surname = $surname;
         $this->mail = $mail;
         $this->address = $address;
-        $this->credit = $credit;
+        $this->setCredit ($credit);
     }
     
 
@@ -110,10 +112,11 @@ class User
      *
      * @return  self
      */ 
-    public function setCredit($credit)
+    public function setCredit(Credit $credit)
     {
         $this->credit = $credit;
 
         return $this;
     }
+    
 }

@@ -4,11 +4,14 @@ class Product
     protected $name;
     protected $price;
     protected $description;
-    public function __construct($name, $price, $description)
+    protected $category;
+
+    public function __construct($name, $price, $description, $category)
     {
         $this->name = $name;
         $this->price = $price;
         $this->description = $description;
+        $this->category = $category;
     }
     
 
@@ -68,6 +71,26 @@ class Product
     public function setDescription($description)
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of category
+     */ 
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set the value of category
+     *
+     * @return  self
+     */ 
+    public function setCategory($category)
+    {
+        $this->category = $category;
 
         return $this;
     }
